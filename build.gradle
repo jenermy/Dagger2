@@ -1,0 +1,31 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.0'
+        classpath 'me.tatarka:gradle-retrolambda:3.7.0'
+        //用classpath 'me.tatarka:gradle-retrolambda:3.5.0'会报如下错误：
+        //Error:Execution failed for task ':app:transformClassesWithRetrolambdaForDebug'.
+        //Missing javaCompileTask for variant: debug/0 from output dir: E:\apkdemo\CoCoin-master\Dagger2\app\build\intermediates\transforms\retrolambda\debug\0
+        //解决办法：升级到me.tatarka:gradle-retrolambda:3.7.0即可
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
